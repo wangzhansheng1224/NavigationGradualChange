@@ -9,6 +9,8 @@
 #import "ViewController.h"
 #import "SecondViewController.h"
 #import "TableViewCell.h"
+#import "NextViewController.h"
+#import "UITableView+Category.h"
 
 #define SCREEN_WIDTH [UIScreen mainScreen].bounds.size.width
 #define SCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height
@@ -108,6 +110,16 @@
         view.backgroundColor=[UIColor colorWithWhite:0.9 alpha:1];
         _tableView.tableFooterView=view;
         [_tableView registerNib:[UINib nibWithNibName:@"TableViewCell" bundle:nil] forCellReuseIdentifier:@"Cell"];
+        
+        NextViewController *detailVC = [[NextViewController alloc] init];
+        UINavigationController *nav=[[UINavigationController alloc]initWithRootViewController:detailVC];
+        [self addChildViewController:nav];
+        
+        // just for force load view
+        if (detailVC.view != nil) {
+//            self.tableView.secondScrollView = detailVC.tableView;
+            self.tableView.secondScrollView=detailVC.tableView;
+        }
     }
     return _tableView;
 }
@@ -222,16 +234,15 @@
             [self.navigationController.navigationBar setShadowImage:[self imageWithColor:[UIColor colorWithWhite:0.9 alpha:1]]];
             
             //透明度不可以>=1,不然从后台进入前台后tableView下移64(此处为一个坑,常见的坑)
-            [self.navigationController.navigationBar setBackgroundImage:[self imageWithColor:[UIColor colorWithWhite:1 alpha:0.9999]] forBarMetrics:UIBarMetricsDefault];
+            [self.navigationController.navigationBar setBackgroundImage:[self imageWithColor:[UIColor colorWithWhite:1 alpha:0.99]] forBarMetrics:UIBarMetricsDefault];
         }
-        
+       
     }
 }
 
 #pragma mark -- 手指离开时tableView的回调
 - (void)scrollViewWillEndDragging:(UIScrollView *)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *)targetContentOffset
 {
-    NSLog(@"%f",scrollView.contentOffset.y);
     
     if (scrollView.contentOffset.y<=-80) {
         
