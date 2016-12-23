@@ -95,11 +95,11 @@
         return;
     }
     _layout = [[UICollectionViewFlowLayout alloc]init];
-    _layout.itemSize = CGSizeMake(WIDTH, WIDTH);
+    _layout.itemSize = CGSizeMake(self.frame.size.width, self.frame.size.height);
     _layout.minimumInteritemSpacing = 0;
     _layout.minimumLineSpacing = 0;
     _layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
-    _cycleCollectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(0, 0, WIDTH, WIDTH) collectionViewLayout:_layout];
+    _cycleCollectionView = [[UICollectionView alloc]initWithFrame:self.bounds collectionViewLayout:_layout];
     _cycleCollectionView.backgroundColor = [UIColor whiteColor];
     //停靠模式，宽高都自由
     _cycleCollectionView.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;

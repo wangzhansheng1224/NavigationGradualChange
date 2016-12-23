@@ -45,21 +45,18 @@
         
         _headView=[[UIView alloc]initWithFrame:CGRectMake(0, -100, SCREEN_WIDTH, SCREEN_WIDTH+100)];
         
-        XTADScrollView *scrollView=[[XTADScrollView alloc]initWithFrame:CGRectMake(0, 75, SCREEN_WIDTH, SCREEN_WIDTH)];
-        scrollView.infiniteLoop=YES;
-        scrollView.pageControlPositionType=pageControlPositionTypeRight;
-        scrollView.needPageControl=YES;
-        scrollView.imageArray=@[@"head",@"head1",@"head2",@"head3",@"head4"];
-        [_headView addSubview:scrollView];
+        UIImageView *image=[[UIImageView alloc]initWithFrame:CGRectMake(0, 100, SCREEN_WIDTH, SCREEN_WIDTH)];
+        image.image=[UIImage imageNamed:@"head1"];
+        [_headView addSubview:image];
         
-        _tittleLabel=[[UILabel alloc]initWithFrame:CGRectMake(0, 0, 120, 15)];
+        _tittleLabel=[[UILabel alloc]initWithFrame:CGRectMake(0, 70, 120, 15)];
         _tittleLabel.text=@"下拉查看更多精彩";
         _tittleLabel.font=[UIFont systemFontOfSize:13];
         _tittleLabel.center=CGPointMake(SCREEN_WIDTH/2+10, 70);
         _tittleLabel.textAlignment=NSTextAlignmentCenter;
         [_headView addSubview:_tittleLabel];
         
-        _imageView=[[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 18, 18)];
+        _imageView=[[UIImageView alloc]initWithFrame:CGRectMake(0, 70, 18, 18)];
         _imageView.tintColor=[UIColor blueColor];
         _imageView.center=CGPointMake(_tittleLabel.center.x-60-10, _tittleLabel.center.y);
         _imageView.image=[UIImage imageNamed:@"arrow"];
@@ -193,7 +190,7 @@
         
         
     }else{
-        
+       
         //图片上移
         CGRect frame=_headView.frame;
         frame.origin.y=-offsetY/2.5-100;
