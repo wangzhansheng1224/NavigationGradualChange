@@ -44,10 +44,15 @@
 		D2B3D3521E0BD3F300FF4EE2 /* UIScrollView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = D2B3D33D1E0BD3F300FF4EE2 /* UIScrollView+MJExtension.m */; };
 		D2B3D3531E0BD3F300FF4EE2 /* UIScrollView+MJRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = D2B3D33F1E0BD3F300FF4EE2 /* UIScrollView+MJRefresh.m */; };
 		D2B3D3541E0BD3F300FF4EE2 /* UIView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = D2B3D3411E0BD3F300FF4EE2 /* UIView+MJExtension.m */; };
-		D2B3D3581E0BD43000FF4EE2 /* UIScrollView+JYPaging.m in Sources */ = {isa = PBXBuildFile; fileRef = D2B3D3571E0BD43000FF4EE2 /* UIScrollView+JYPaging.m */; };
 		D2B3D35B1E0BD49200FF4EE2 /* NextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2B3D35A1E0BD49200FF4EE2 /* NextViewController.m */; };
 		D2B3D3611E0BD6C400FF4EE2 /* UITableView+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = D2B3D3601E0BD6C400FF4EE2 /* UITableView+Category.m */; };
 		D2B3D3671E0BDE1F00FF4EE2 /* image2.png in Resources */ = {isa = PBXBuildFile; fileRef = D2B3D3661E0BDE1F00FF4EE2 /* image2.png */; };
+		D2B3D36F1E0CCD9C00FF4EE2 /* head1.png in Resources */ = {isa = PBXBuildFile; fileRef = D2B3D36E1E0CCD9C00FF4EE2 /* head1.png */; };
+		D2B3D3711E0CCDB200FF4EE2 /* head3.png in Resources */ = {isa = PBXBuildFile; fileRef = D2B3D3701E0CCDB200FF4EE2 /* head3.png */; };
+		D2B3D3731E0CCDC400FF4EE2 /* head4.png in Resources */ = {isa = PBXBuildFile; fileRef = D2B3D3721E0CCDC400FF4EE2 /* head4.png */; };
+		D2B3D3751E0CCDC800FF4EE2 /* head2.png in Resources */ = {isa = PBXBuildFile; fileRef = D2B3D3741E0CCDC800FF4EE2 /* head2.png */; };
+		D2B3D37B1E0CCFB700FF4EE2 /* CycleImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D2B3D3781E0CCFB700FF4EE2 /* CycleImageCell.m */; };
+		D2B3D37C1E0CCFB700FF4EE2 /* XTADScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = D2B3D37A1E0CCFB700FF4EE2 /* XTADScrollView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -134,13 +139,19 @@
 		D2B3D33F1E0BD3F300FF4EE2 /* UIScrollView+MJRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+MJRefresh.m"; sourceTree = "<group>"; };
 		D2B3D3401E0BD3F300FF4EE2 /* UIView+MJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+MJExtension.h"; sourceTree = "<group>"; };
 		D2B3D3411E0BD3F300FF4EE2 /* UIView+MJExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+MJExtension.m"; sourceTree = "<group>"; };
-		D2B3D3561E0BD43000FF4EE2 /* UIScrollView+JYPaging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+JYPaging.h"; sourceTree = "<group>"; };
-		D2B3D3571E0BD43000FF4EE2 /* UIScrollView+JYPaging.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+JYPaging.m"; sourceTree = "<group>"; };
 		D2B3D3591E0BD49200FF4EE2 /* NextViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NextViewController.h; sourceTree = "<group>"; };
 		D2B3D35A1E0BD49200FF4EE2 /* NextViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NextViewController.m; sourceTree = "<group>"; };
 		D2B3D35F1E0BD6C400FF4EE2 /* UITableView+Category.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+Category.h"; sourceTree = "<group>"; };
 		D2B3D3601E0BD6C400FF4EE2 /* UITableView+Category.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+Category.m"; sourceTree = "<group>"; };
 		D2B3D3661E0BDE1F00FF4EE2 /* image2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image2.png; sourceTree = "<group>"; };
+		D2B3D36E1E0CCD9C00FF4EE2 /* head1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = head1.png; sourceTree = "<group>"; };
+		D2B3D3701E0CCDB200FF4EE2 /* head3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = head3.png; sourceTree = "<group>"; };
+		D2B3D3721E0CCDC400FF4EE2 /* head4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = head4.png; sourceTree = "<group>"; };
+		D2B3D3741E0CCDC800FF4EE2 /* head2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = head2.png; sourceTree = "<group>"; };
+		D2B3D3771E0CCFB700FF4EE2 /* CycleImageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CycleImageCell.h; sourceTree = "<group>"; };
+		D2B3D3781E0CCFB700FF4EE2 /* CycleImageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CycleImageCell.m; sourceTree = "<group>"; };
+		D2B3D3791E0CCFB700FF4EE2 /* XTADScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTADScrollView.h; sourceTree = "<group>"; };
+		D2B3D37A1E0CCFB700FF4EE2 /* XTADScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XTADScrollView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -195,16 +206,16 @@
 				D26CCBA31E03CA7D0059E1B9 /* AppDelegate.m */,
 				D26CCBA51E03CA7D0059E1B9 /* ViewController.h */,
 				D26CCBA61E03CA7D0059E1B9 /* ViewController.m */,
-				D29F21C41E091207000F6948 /* TableViewCell.h */,
-				D29F21C51E091207000F6948 /* TableViewCell.m */,
-				D29F21C61E091207000F6948 /* TableViewCell.xib */,
 				D20001501E08FF2E000124E3 /* SecondViewController.h */,
 				D20001511E08FF2E000124E3 /* SecondViewController.m */,
 				D2B3D3591E0BD49200FF4EE2 /* NextViewController.h */,
 				D2B3D35A1E0BD49200FF4EE2 /* NextViewController.m */,
 				D2B3D35F1E0BD6C400FF4EE2 /* UITableView+Category.h */,
 				D2B3D3601E0BD6C400FF4EE2 /* UITableView+Category.m */,
-				D2B3D3551E0BD43000FF4EE2 /* Paging */,
+				D29F21C41E091207000F6948 /* TableViewCell.h */,
+				D29F21C51E091207000F6948 /* TableViewCell.m */,
+				D29F21C61E091207000F6948 /* TableViewCell.xib */,
+				D2B3D3761E0CCFB700FF4EE2 /* ADScrollView */,
 				D2B3D3151E0BD3F300FF4EE2 /* MJRefresh */,
 				D2B3D3041E0BD3C800FF4EE2 /* sources */,
 				D26CCBA81E03CA7D0059E1B9 /* Main.storyboard */,
@@ -247,6 +258,10 @@
 			children = (
 				D2B3D3051E0BD3C800FF4EE2 /* arrow@2x.png */,
 				D2B3D3061E0BD3C800FF4EE2 /* head.png */,
+				D2B3D36E1E0CCD9C00FF4EE2 /* head1.png */,
+				D2B3D3741E0CCDC800FF4EE2 /* head2.png */,
+				D2B3D3701E0CCDB200FF4EE2 /* head3.png */,
+				D2B3D3721E0CCDC400FF4EE2 /* head4.png */,
 				D2B3D3071E0BD3C800FF4EE2 /* image1.png */,
 				D2B3D3661E0BDE1F00FF4EE2 /* image2.png */,
 				D2B3D3091E0BD3C800FF4EE2 /* nextimage1.png */,
@@ -350,13 +365,15 @@
 			path = Header;
 			sourceTree = "<group>";
 		};
-		D2B3D3551E0BD43000FF4EE2 /* Paging */ = {
+		D2B3D3761E0CCFB700FF4EE2 /* ADScrollView */ = {
 			isa = PBXGroup;
 			children = (
-				D2B3D3561E0BD43000FF4EE2 /* UIScrollView+JYPaging.h */,
-				D2B3D3571E0BD43000FF4EE2 /* UIScrollView+JYPaging.m */,
+				D2B3D3771E0CCFB700FF4EE2 /* CycleImageCell.h */,
+				D2B3D3781E0CCFB700FF4EE2 /* CycleImageCell.m */,
+				D2B3D3791E0CCFB700FF4EE2 /* XTADScrollView.h */,
+				D2B3D37A1E0CCFB700FF4EE2 /* XTADScrollView.m */,
 			);
-			path = Paging;
+			path = ADScrollView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -470,13 +487,17 @@
 				D29F21C81E091207000F6948 /* TableViewCell.xib in Resources */,
 				D2B3D3111E0BD3C800FF4EE2 /* nextimage1.png in Resources */,
 				D2B3D3671E0BDE1F00FF4EE2 /* image2.png in Resources */,
+				D2B3D36F1E0CCD9C00FF4EE2 /* head1.png in Resources */,
 				D2B3D30D1E0BD3C800FF4EE2 /* arrow@2x.png in Resources */,
 				D26CCBAF1E03CA7D0059E1B9 /* LaunchScreen.storyboard in Resources */,
+				D2B3D3711E0CCDB200FF4EE2 /* head3.png in Resources */,
 				D26CCBAC1E03CA7D0059E1B9 /* Assets.xcassets in Resources */,
 				D2B3D3501E0BD3F300FF4EE2 /* MJRefresh.bundle in Resources */,
 				D2B3D3131E0BD3C800FF4EE2 /* nextimage3.png in Resources */,
+				D2B3D3751E0CCDC800FF4EE2 /* head2.png in Resources */,
 				D2B3D3121E0BD3C800FF4EE2 /* nextimage2.png in Resources */,
 				D26CCBAA1E03CA7D0059E1B9 /* Main.storyboard in Resources */,
+				D2B3D3731E0CCDC400FF4EE2 /* head4.png in Resources */,
 				D2B3D30E1E0BD3C800FF4EE2 /* head.png in Resources */,
 				D2B3D3141E0BD3C800FF4EE2 /* presentimage.png in Resources */,
 			);
@@ -505,6 +526,7 @@
 			files = (
 				D2B3D34E1E0BD3F300FF4EE2 /* MJRefreshNormalHeader.m in Sources */,
 				D2B3D34F1E0BD3F300FF4EE2 /* MJRefreshStateHeader.m in Sources */,
+				D2B3D37C1E0CCFB700FF4EE2 /* XTADScrollView.m in Sources */,
 				D2B3D34D1E0BD3F300FF4EE2 /* MJRefreshGifHeader.m in Sources */,
 				D2B3D3541E0BD3F300FF4EE2 /* UIView+MJExtension.m in Sources */,
 				D2B3D34B1E0BD3F300FF4EE2 /* MJRefreshBackNormalFooter.m in Sources */,
@@ -515,10 +537,10 @@
 				D2B3D3431E0BD3F300FF4EE2 /* MJRefreshBackFooter.m in Sources */,
 				D20001521E08FF2E000124E3 /* SecondViewController.m in Sources */,
 				D2B3D3521E0BD3F300FF4EE2 /* UIScrollView+MJExtension.m in Sources */,
+				D2B3D37B1E0CCFB700FF4EE2 /* CycleImageCell.m in Sources */,
 				D26CCBA71E03CA7D0059E1B9 /* ViewController.m in Sources */,
 				D2B3D3481E0BD3F300FF4EE2 /* MJRefreshAutoNormalFooter.m in Sources */,
 				D2B3D3531E0BD3F300FF4EE2 /* UIScrollView+MJRefresh.m in Sources */,
-				D2B3D3581E0BD43000FF4EE2 /* UIScrollView+JYPaging.m in Sources */,
 				D26CCBA41E03CA7D0059E1B9 /* AppDelegate.m in Sources */,
 				D2B3D34A1E0BD3F300FF4EE2 /* MJRefreshBackGifFooter.m in Sources */,
 				D2B3D3461E0BD3F300FF4EE2 /* MJRefreshHeader.m in Sources */,

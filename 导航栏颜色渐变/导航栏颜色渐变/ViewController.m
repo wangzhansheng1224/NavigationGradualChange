@@ -11,6 +11,7 @@
 #import "TableViewCell.h"
 #import "NextViewController.h"
 #import "UITableView+Category.h"
+#import "XTADScrollView.h"
 
 #define SCREEN_WIDTH [UIScreen mainScreen].bounds.size.width
 #define SCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height
@@ -44,9 +45,12 @@
         
         _headView=[[UIView alloc]initWithFrame:CGRectMake(0, -100, SCREEN_WIDTH, SCREEN_WIDTH+100)];
         
-        UIImageView *headimage=[[UIImageView alloc]initWithFrame:CGRectMake(0, 100, SCREEN_WIDTH, SCREEN_WIDTH)];
-        headimage.image=[UIImage imageNamed:@"head"];
-        [_headView addSubview:headimage];
+        XTADScrollView *scrollView=[[XTADScrollView alloc]initWithFrame:CGRectMake(0, 75, SCREEN_WIDTH, SCREEN_WIDTH)];
+        scrollView.infiniteLoop=YES;
+        scrollView.pageControlPositionType=pageControlPositionTypeRight;
+        scrollView.needPageControl=YES;
+        scrollView.imageArray=@[@"head",@"head1",@"head2",@"head3",@"head4"];
+        [_headView addSubview:scrollView];
         
         _tittleLabel=[[UILabel alloc]initWithFrame:CGRectMake(0, 0, 120, 15)];
         _tittleLabel.text=@"下拉查看更多精彩";
@@ -71,6 +75,7 @@
     _leftBtn=[[UIButton alloc]initWithFrame:CGRectMake(0, 0, 30, 30)];
     [_leftBtn setBackgroundImage:[UIImage imageNamed:@"enjoy_icon_back"] forState:UIControlStateNormal];
     self.navigationItem.leftBarButtonItem=[[UIBarButtonItem alloc]initWithCustomView:_leftBtn];
+    [_leftBtn addTarget:self action:@selector(leftbtnClick) forControlEvents:UIControlEventTouchUpInside];
     
     //导航栏右侧Button
     _rightBtn=[[UIButton alloc]initWithFrame:CGRectMake(0, 0, 30, 30)];
@@ -84,6 +89,10 @@
     
     //去掉导航栏底部的黑线
     [self.navigationController.navigationBar setShadowImage:[[UIImage alloc] init]];
+}
+
+- (void)leftbtnClick{
+    NSLog(@"左button被点击了");
 }
 
 //  颜色转换为背景图片
@@ -106,14 +115,14 @@
         _tableView.delegate=self;
         _tableView.dataSource=self;
         _tableView.backgroundColor=[UIColor clearColor];
+        self.tableView.showsVerticalScrollIndicator=NO;
         UIView *view=[[UIView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 0.5)];
         view.backgroundColor=[UIColor colorWithWhite:0.9 alpha:1];
         _tableView.tableFooterView=view;
         [_tableView registerNib:[UINib nibWithNibName:@"TableViewCell" bundle:nil] forCellReuseIdentifier:@"Cell"];
         
         NextViewController *detailVC = [[NextViewController alloc] init];
-        UINavigationController *nav=[[UINavigationController alloc]initWithRootViewController:detailVC];
-        [self addChildViewController:nav];
+        [self addChildViewController:detailVC];
         
         // just for force load view
         if (detailVC.view != nil) {

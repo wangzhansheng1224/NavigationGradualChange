@@ -30,7 +30,7 @@ static const char jy_secondScrollView;
 }
 
 
-- (void)setFirstScrollView:(UIScrollView *)firstScrollView {
+- (void)setFirstScrollView:(UITableView *)firstScrollView {
     [self addFirstScrollViewFooter];
 }
 
@@ -38,7 +38,7 @@ static const char jy_secondScrollView;
     return objc_getAssociatedObject(self, &jy_secondScrollView);
 }
 
-- (void)setSecondScrollView:(UIScrollView *)secondScrollView {
+- (void)setSecondScrollView:(UITableView *)secondScrollView {
     objc_setAssociatedObject(self, &jy_secondScrollView, secondScrollView, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     
     [self addFirstScrollViewFooter];
@@ -84,7 +84,7 @@ static const char jy_secondScrollView;
     self.secondScrollView.scrollEnabled = YES;
     
     [UIView animateWithDuration:kAnimationDuration animations:^{
-        self.contentInset = UIEdgeInsetsMake(-self.contentSize.height - self.footer.frame.size.height, 0, 0, 0);
+        self.contentInset = UIEdgeInsetsMake(-self.contentSize.height - self.footer.frame.size.height+64, 0, 0, 0);
     }];
     
     self.originContentHeight = self.contentSize.height;
@@ -98,8 +98,9 @@ static const char jy_secondScrollView;
     
     self.scrollEnabled = YES;
     
+    NSLog(@"%f",self.footer.frame.size.height);
     [UIView animateWithDuration:kAnimationDuration animations:^{
-        self.contentInset = UIEdgeInsetsMake(0, 0, self.footer.frame.size.height, 0);
+        self.contentInset = UIEdgeInsetsMake(0, 0, 0, 0);
     }];
     self.contentSize = CGSizeMake(0, self.originContentHeight);
     
