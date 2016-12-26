@@ -261,21 +261,58 @@
         
         // 核心代码
         self.definesPresentationContext = YES;
-        // 可以使用的Style
+        
+        // 可以使用的Style(背景不会是黑色)
         // UIModalPresentationOverCurrentContext
         // UIModalPresentationOverFullScreen
         // UIModalPresentationCustom
         // 使用其他Style会黑屏
         twoVC.modalPresentationStyle = UIModalPresentationOverCurrentContext;
         
-//        typedef enum {
-//            UIModalTransitionStyleCoverVertical=0,//默认方式，竖向上推
-//            UIModalTransitionStyleFlipHorizontal, //水平反转
-//            UIModalTransitionStyleCrossDissolve,//隐出隐现
-//            UIModalTransitionStylePartialCurl,//部分翻页效果
-//        } UIModalTransitionStyle;
+        /**
+        typedef enum {
+            UIModalTransitionStyleCoverVertical=0,//默认方式，竖向上推
+            UIModalTransitionStyleFlipHorizontal, //水平反转
+            UIModalTransitionStyleCrossDissolve,//隐出隐现
+            UIModalTransitionStylePartialCurl,//部分翻页效果
+        } UIModalTransitionStyle;
+         */
+        //隐出隐现
         twoVC.modalTransitionStyle=UIModalTransitionStyleCrossDissolve;
         [self.navigationController presentViewController:twoVC animated:YES completion:nil];
+        
+#if 0
+        //另一种方法
+        CATransition *animation = [CATransition animation];
+        animation.duration = 1.0;
+        animation.timingFunction = UIViewAnimationCurveEaseInOut;
+        animation.type = @"pageCurl";//这里可以选择下面列举出来的几个动画，
+        animation.subtype = kCATransitionFromLeft;
+        [self.view.window.layer addAnimation:animation forKey:nil];
+        [self presentViewController:twoVC animated:YES completion:nil];
+        
+        /**
+        type：
+        kCATransitionFade               //淡出
+        kCATransitionMoveIn          //覆盖原图
+        kCATransitionPush               //推出
+        kCATransitionReveal          //底部显出来
+        
+        SubType:
+        kCATransitionFromRight
+        kCATransitionFromLeft    // 默认值
+        kCATransitionFromTop
+        kCATransitionFromBottom
+         
+        设置其他动画类型的方法(type):
+        pageCurl   向上翻一页
+        pageUnCurl 向下翻一页
+        rippleEffect 滴水效果
+        suckEffect 收缩效果，如一块布被抽走
+        cube 立方体效果
+        oglFlip 上下翻转效果
+         */
+#endif
 
     }
     
