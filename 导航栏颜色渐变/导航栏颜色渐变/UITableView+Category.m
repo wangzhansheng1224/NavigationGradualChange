@@ -8,6 +8,8 @@
 
 #import "MJRefresh.h"
 #import "UITableView+Category.h"
+#define SCREEN_WIDTH [UIScreen mainScreen].bounds.size.width
+#define SCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height
 
 static const float kAnimationDuration = 0.25f;
 static const char jy_originContentHeight;
@@ -54,11 +56,13 @@ static const char jy_secondScrollView;
 
 - (void)addFirstScrollViewFooter {
     __weak __typeof(self) weakSelf = self;
-    MJRefreshBackNormalFooter *footer = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
+    MJRefreshAutoNormalFooter *footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
         [weakSelf endFooterRefreshing];
     }];
-//    footer.appearencePercentTriggerAutoRefresh = 2;
+    footer.triggerAutomaticallyRefreshPercent = 70;
     [footer setTitle:@"继续拖动,查看图文详情" forState:MJRefreshStateIdle];
+    footer.stateLabel.font = [UIFont systemFontOfSize:13];
+    footer.stateLabel.textColor = [UIColor blackColor];
     
     self.footer = footer;
 }
@@ -71,6 +75,8 @@ static const char jy_secondScrollView;
     header.lastUpdatedTimeLabel.hidden = YES;
     [header setTitle:@"下拉,返回宝贝详情" forState:MJRefreshStateIdle];
     [header setTitle:@"释放,返回宝贝详情" forState:MJRefreshStatePulling];
+    header.stateLabel.font = [UIFont systemFontOfSize:13];
+    header.stateLabel.textColor = [UIColor blackColor];
     
     self.secondScrollView.header = header;
 }
@@ -82,6 +88,7 @@ static const char jy_secondScrollView;
     
     self.secondScrollView.header.hidden = NO;
     self.secondScrollView.scrollEnabled = YES;
+
     
     [UIView animateWithDuration:kAnimationDuration animations:^{
         self.contentInset = UIEdgeInsetsMake(-self.contentSize.height - self.footer.frame.size.height+64, 0, 0, 0);
@@ -98,13 +105,13 @@ static const char jy_secondScrollView;
     
     self.scrollEnabled = YES;
     
-    NSLog(@"%f",self.footer.frame.size.height);
     [UIView animateWithDuration:kAnimationDuration animations:^{
         self.contentInset = UIEdgeInsetsMake(0, 0, 0, 0);
     }];
     self.contentSize = CGSizeMake(0, self.originContentHeight);
     
-    [self setContentOffset:CGPointZero animated:YES];
+    //上拉返回时,firstscrollerView的起始坐标
+    [self setContentOffset:CGPointMake(0, self.contentSize.height-SCREEN_HEIGHT) animated:YES];
     
     [self addFirstScrollViewFooter];
 }

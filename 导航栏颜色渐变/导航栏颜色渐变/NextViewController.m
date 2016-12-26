@@ -19,8 +19,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.edgesForExtendedLayout = UIRectEdgeAll;
-    self.tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT) style:UITableViewStylePlain];
+    self.tableView = [[UITableView alloc]initWithFrame:[UIScreen mainScreen].bounds style:UITableViewStylePlain];
     self.tableView.delegate=self;
     self.tableView.dataSource=self;
     self.tableView.showsVerticalScrollIndicator=NO;
@@ -33,12 +32,16 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 3;
+    return 6;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     TableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
-    cell.imageview.image=[UIImage imageNamed:[NSString stringWithFormat:@"nextimage%ld",(long)indexPath.row+1]];
+    if (indexPath.row>=3) {
+        cell.imageview.image=[UIImage imageNamed:[NSString stringWithFormat:@"nextimage%ld",(long)indexPath.row-2]];
+    }else{
+        cell.imageview.image=[UIImage imageNamed:[NSString stringWithFormat:@"nextimage%ld",(long)indexPath.row+1]];
+    }
     return cell;
 }
 

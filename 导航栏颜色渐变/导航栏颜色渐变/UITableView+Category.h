@@ -10,4 +10,5 @@
 
 @interface UITableView (Category)
 @property (nonatomic, strong) UITableView *secondScrollView;
+
 @end

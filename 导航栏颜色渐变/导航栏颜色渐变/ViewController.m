@@ -31,8 +31,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor=[UIColor colorWithRed:238/255.0 green:238/255.0 blue:238/255.0 alpha:1];
-//    self.automaticallyAdjustsScrollViewInsets=NO;
-    self.edgesForExtendedLayout = UIRectEdgeAll;
+    //不自动调节,占满整个屏幕(默认)
+//    self.automaticallyAdjustsScrollViewInsets=YES;
+//    self.edgesForExtendedLayout = UIRectEdgeAll;
     [self createNavigation];
     [self.view addSubview:self.headView];
     [self.view addSubview:self.tableView];
@@ -46,7 +47,7 @@
         _headView=[[UIView alloc]initWithFrame:CGRectMake(0, -100, SCREEN_WIDTH, SCREEN_WIDTH+100)];
         
         UIImageView *image=[[UIImageView alloc]initWithFrame:CGRectMake(0, 100, SCREEN_WIDTH, SCREEN_WIDTH)];
-        image.image=[UIImage imageNamed:@"head1"];
+        image.image=[UIImage imageNamed:@"head2"];
         [_headView addSubview:image];
         
         _tittleLabel=[[UILabel alloc]initWithFrame:CGRectMake(0, 70, 120, 15)];
@@ -123,7 +124,6 @@
         
         // just for force load view
         if (detailVC.view != nil) {
-//            self.tableView.secondScrollView = detailVC.tableView;
             self.tableView.secondScrollView=detailVC.tableView;
         }
     }
@@ -131,13 +131,17 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 2;
+    return 4;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     TableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
-    cell.imageview.image=[UIImage imageNamed:[NSString stringWithFormat:@"image%ld",(long)indexPath.row+1]];
+    if (indexPath.row>=2) {
+         cell.imageview.image=[UIImage imageNamed:[NSString stringWithFormat:@"head%ld",(long)indexPath.row+1]];
+    }else{
+         cell.imageview.image=[UIImage imageNamed:[NSString stringWithFormat:@"image%ld",(long)indexPath.row+1]];
+    }
     return cell;
 }
 

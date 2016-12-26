@@ -95,7 +95,7 @@
                 [self beginRefreshing];
             }
         } else { // 超出一个屏幕
-            if (_scrollView.mj_offsetY >= _scrollView.mj_contentH + _scrollView.mj_insetB - _scrollView.mj_h) {
+            if (_scrollView.mj_offsetY >= _scrollView.mj_contentH + _scrollView.mj_insetB - _scrollView.mj_h+self.triggerAutomaticallyRefreshPercent) {
                 [self beginRefreshing];
             }
         }
